@@ -1,4 +1,4 @@
-use std::{fs::File, io::{BufReader, BufRead}};
+use std::{fs::File, io::{BufReader, BufRead, Result}};
 
 struct RangeMap {
     source_start: i64,
@@ -30,8 +30,8 @@ fn process_step(seeds: &mut Vec<i64>, ranges: &mut Vec<RangeMap>) -> () {
     }
 }
 
-fn main() {
-    let filepath = "./input.txt";
+pub fn run() -> Result<String> {
+    let filepath = "./src/day2/input.txt";
     let file = File::open(filepath);
     let reader = BufReader::new(file.unwrap());
 
@@ -79,5 +79,7 @@ fn main() {
 
     process_step(&mut seeds, &mut ranges);
 
-    println!("Minimal location is: {}", seeds.iter().min().unwrap());
+    let answer = seeds.iter().min().unwrap();
+    println!("Minimal location is: {}", answer);
+    Ok(answer.to_string())
 }

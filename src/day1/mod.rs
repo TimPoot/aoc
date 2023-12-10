@@ -1,8 +1,9 @@
-use std::{io::{BufReader, BufRead}, fs::File};
+use std::{io::{BufReader, BufRead, Result}, fs::File};
 
-fn main() -> std::io::Result<()> {
-    let filepath = "./input.txt";
+pub fn run() -> Result<String> {
+    let filepath = "./src/day1/input.txt";
     let file = File::open(filepath)?;
+    println!("THIS HAPPENS");
     let reader = BufReader::new(file);
 
     let mut number_list = Vec::<u32>::new();
@@ -28,5 +29,5 @@ fn main() -> std::io::Result<()> {
     let sum: u32 = number_list.iter().sum();
     println!("Sum: {}", sum);
 
-    Ok(())
+    Ok(sum.to_string())
 }

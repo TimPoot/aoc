@@ -1,8 +1,8 @@
-use std::{fs::File, io::{BufReader, BufRead}};
+use std::{fs::File, io::{BufReader, BufRead, Result}};
 
 
-fn main() {
-    let filepath = "./input.txt";
+pub fn run() -> Result<String> {
+    let filepath = "./src/day2/input.txt";
     let file = File::open(filepath).unwrap();
     let reader = BufReader::new(file);
 
@@ -64,6 +64,9 @@ fn main() {
         }
     }
 
+    let winning_games_sum: u16 = winning_games.iter().sum::<u16>();
     println!("Winning games: {:?}", winning_games);
-    println!("Sum of winningn games: {}", winning_games.iter().sum::<u16>())
+    println!("Sum of winningn games: {}", winning_games_sum);
+
+    Ok(winning_games_sum.to_string())
 }
