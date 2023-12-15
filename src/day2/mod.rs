@@ -1,4 +1,5 @@
-use std::{fs::File, io::{BufReader, BufRead, Result}, cmp::{min, max}};
+#![allow(unused)]
+use std::{fs::File, io::{BufReader, BufRead, Result}, cmp::{max}};
 
 pub fn run() -> Result<String> {
     let filepath = "./src/day2/input.txt";

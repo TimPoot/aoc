@@ -31,7 +31,7 @@ fn process_step(seeds: &mut Vec<i64>, ranges: &mut Vec<RangeMap>) -> () {
 }
 
 pub fn run() -> Result<String> {
-    let filepath = "./src/day2/input.txt";
+    let filepath = "./src/day5/input.txt";
     let file = File::open(filepath);
     let reader = BufReader::new(file.unwrap());
 
