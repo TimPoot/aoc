@@ -2,7 +2,7 @@ import sys
 
 def part1(puzzle_input: str):
     with open(puzzle_input, "r") as in_file:
-        print(in_file)
+        return "TODO"
 
 def part2(puzzle_input: str):
     with open(puzzle_input, "r") as in_file:
